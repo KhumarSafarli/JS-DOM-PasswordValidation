@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div id="preloader" class="preloader"></div>
+    <div class="page-container">
+        <div class="left-side">
+            <div class="header">
+                <h1> Welcome </h1>
+                <p>We are glad to see you back with us</p>
+            </div>
+            <div class="input-box">
+                <div class="username-input">
+                    <img src="./assets/icons/profile.png" alt="Username Icon">
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <div class="password-input">
+                    <img src="./assets/icons/password.png" alt="Password Icon">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="password-validation-box" id="password-validation-box">
+                   <h5> Password must contain the following:</h5>
+                   <p id="lowercase" class="invalid">A lowercase letter</p>
+                   <p id="capital-letter" class="invalid">A capital (uppercase) letter</p>
+                   <p id="number" class="invalid">A number</p>
+                   <p id="length" class="invalid">Minimum 8 characters</p>
+                   
+                   
+                </div>
+                <button>NEXT</button>
+            </div>
+            <div class="login-text">
+                <div class="border-line"></div>
+                <p><strong>Login</strong> with Others</p>
+                <div class="border-line"></div>
+            </div>
+            <div class="button-boxes">
+                <button id="google"><img src="./assets/icons/google.png"/> Login with <strong> Google </strong></button>
+                <button id="facebook"><img src="./assets/icons/facebook-logo.png"/>Login with <strong> Facebook </strong></button>
+            </div>
+
+        </div>
+        <div class="right-side">
+            <img src="./assets/images/boy-image.png"/>
+        </div>
+    </div>
+   
+    <script src="./script.js"></script>
+</body>
+
+</html>

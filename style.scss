@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "./mixins";
+
+
+body {
+    padding: 34px;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./assets/fonts/Poppins-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./assets/fonts/Poppins-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "SmoochSans";
+    src: url(./assets/fonts/SmoochSans-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+
+html {
+    font-family: "Poppins";
+}
+#preloader{
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #E4EEF4 url(./assets/images/loadingcircle.gif) no-repeat center center;
+    height: 100vh;
+    background-size: 15%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: opacity 1s ease-in-out;
+
+}
+.hide-preloader {
+    opacity: 0;
+    pointer-events: none;
+}
+.page-container {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    @include for-size(tablet) {
+      height: 100%;
+    }
+    @include for-size(mobile){
+        width: 100%;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        transform: translateY(100px);
+        @include for-size(tablet) {
+            gap:50px;
+          }
+          @include for-size(mobile){
+            gap:10px;
+          }
+        
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            
+          
+
+            h1 {
+                color: #1C1C1C;
+                font-family: "SmoochSans";
+                font-size: 120px;
+                font-weight: 700;
+                height: 100px;
+                transition: 0.3s;
+               
+            }
+            
+           
+            h1:hover {
+                color: #965000
+            }
+
+            p {
+                color: #1C1C1C;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+
+        .input-box {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+           
+            .password-validation-box {
+                @include password-validation-box;
+
+                h5 {
+                    margin-bottom: 5px;
+                }
+
+                .valid {
+                    color: green;
+                }
+
+                .valid:before {
+                    position: relative;
+                    content: "✓";
+                    margin-right: 5px;
+                }
+
+                .invalid {
+                    color: red;
+                }
+
+                .invalid:before {
+                    position: relative;
+                    margin-right: 5px;
+                    content: "✗";
+                }
+            }
+
+            .username-input,
+            .password-input {
+                display: flex;
+                align-items: center;
+                padding: 14px 18px;
+                width: 364px;
+                height: 52px;
+                border-radius: 13px;
+                background-color: #F2F2F2;
+
+                img {
+                    margin-right: 3px;
+                }
+            }
+            
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+
+            button {
+                @include next-button-format;
+            }
+
+            button:hover {
+                background-color: #b76100;
+            }
+        }
+
+        .login-text {
+            @include center-all-items;
+            gap: 3px;
+
+            .border-line {
+                width: 100px;
+                height: 1px;
+                background: #F0EDFF;
+            }
+
+            p {
+                color: #1C1C1C;
+                font-size: 18px;
+            }
+        }
+
+        .button-boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            img {
+                margin-right: 8px;
+            }
+
+            button {
+                @include button-format;
+            }
+
+            button:hover {
+                border: 2px solid #b76100;
+            }
+        }
+    }
+
+    .right-side {
+        @include for-size(tablet) {
+            display: none;
+        }
+        
+    }
+}
